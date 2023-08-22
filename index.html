@@ -12,23 +12,29 @@
   <script src="https://cdn.rawgit.com/mrturck/aframe-joystick/master/joystick.min.js"></script>
   <style>
     #np {
+      position: fixed;
       width: 100% !important;
       height: 100px !important;
       right: 0px !important;
       bottom: 0px !important;
+      z-index: 1;
+    }
+    .a-enter-vr {
+      position: fixed;
+      z-index: 2;
     }
   </style>
 </head>
 <body>
-<a-scene joystick gltf-model="basisTranscoderPath:https://cdn.jsdelivr.net/npm/super-three@0.141.0/examples/js/libs/basis/;" background="color: #FAFAFA" renderer="colorManagement: true;">
-  <a-entity id="camera" camera look-controls wasd-controls="acceleration:100" position="0 1.8 0" rotation="0 0 0"></a-entity>
+<a-scene vr-mode-ui="enabled: true;"  joystick gltf-model="basisTranscoderPath:https://cdn.jsdelivr.net/npm/super-three@0.141.0/examples/js/libs/basis/;" background="color: #FAFAFA" renderer="colorManagement: true;">
+  <a-entity id="camera" camera look-controls wasd-controls="acceleration:100" position="0 1.5 0" rotation="0 0 0"></a-entity>
   <a-assets timeout="120000">
     <a-asset-item id="mansion"
       src="https://nodes-tech.ru/file/mansion.glb"
       response-type="arraybuffer"
       crossorigin="anonymous"></a-asset-item>
   </a-assets>
-  <a-entity id="mansion-model" gltf-model="#mansion" scale="10 10 10" rotation="0 114 0"></a-entity>
+  <a-entity id="mansion-model" gltf-model="#mansion" scale="10 10 10" rotation="0 130 0"></a-entity>
 </a-scene>
 </body>
 </html>
